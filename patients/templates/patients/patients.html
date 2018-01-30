@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'patients/blue-cross.ico' %}">
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="{% static 'patients/bootstrap.min.css' %}">
+
+      <!--Google fonts CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=fire">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'patients/bootstrap.min.css' %}" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="{% static 'patients/jumbotron.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'patients/patients.css' %}">
+
+      <title>Jumbotron Template for Bootstrap</title>
+  </head>
+
+  <body class="body">
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#topNavBar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <a class="navbar-brand font-effect-fire" id="logoAnchor" href="{% url 'patients:patient_index'%}">ST. Monica</a>
+
+        <!--Navbar items -->
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'patients:patient_index' %}">Home <span class="sr-only">(current)</span>
+                    <span class=""
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Medications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Doctors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        <!--End of Navbar items -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-6">
+                    <table class="table table-condensed table-striped table-hover active">
+                        <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Name</th>
+                              <th>past medical History</th>
+                              <th>Last doctor </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for patient in all_patients %}
+                                <tr id="patient-link">
+                                  <th scope="row">{{ patient.id }}</th>
+                                    <td><a href="{% url 'patients:patient_detail' patient.id %}">{{ patient.name }}</a></td>
+                                    <td>{{ patient.past_medical_history }}</td>
+                                    <td>{{ patient.doctor_assigned.name }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table><!-- End table -->
+                </div><!--end col-lg-6 -->
+
+                <div class="col-lg-6">
+                     <form action="">
+                         {% csrf_token %}
+                          <div class="form-group">
+                            <label for="email">name:</label>
+                            <input type="text" class="form-control" id="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="pwd">Age:</label>
+                            <input type="number" class="form-control" id="pwd">
+                          </div>
+                         <div class="form-group">
+                            <label for="pwd">Telephone:</label>
+                            <input type="telephone" class="form-control" id="pwd">
+                          </div>
+                         <div class="form-group">
+                            <label for="pwd">residence:</label>
+                            <input type="text" class="form-control" id="pwd">
+                          </div>
+                         <div class="form-group">
+                            <label for="pwd">Past Medical History:</label>
+                            <input type="password" class="form-control" id="pwd">
+                          </div>
+                         <div class="form-group">
+                            <label for="pwd">medication History:</label>
+                            <input type="password" class="form-control" id="pwd">
+                          </div>
+                          <button type="submit" class="btn btn-default add-patient-button">Add Patient</button>
+                    </form>
+                </div><!-- End div 2 col-lg-6-->
+            </div><!--End row -->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2017</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
