@@ -1,0 +1,86 @@
+.body {
+    color: black;
+    background: #0575E6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*Nav bar*/
+body nav a#logoAnchor{
+    color: #ffffff;
+    font-family: 'Satisfy', serif;
+}
+
+body, nav div div a:hover{
+    color: #ffffff;
+    animation-name: navbarLogoAnimation;
+}
+
+/* navbar items on right */
+.navbar-right .nav-item a.nav-link {
+    color: #FFFFFF;
+}
+
+.navbar-right .nav-item a.nav-link:hover {
+    color: lawngreen;
+}
+
+/*Navbar logo animation*/
+@keyframes navbarLogoAnimation {
+    from {padding: 10px 20px; font-size: inherit;}
+    to{padding: 15px 30px; font-size: 24px;}
+}
+
+
+
+
+h1.header{
+    color: white;
+}
+
+label{
+    color: white;
+}
+
+table{
+    color: white;
+}
+
+#patient-link td a{
+    color: white;
+    text-decoration: none;
+}
+
+#patient-link td a:hover{
+    color: blue;
+    background-color: #ffffff;
+}
+
+/*Add Patient form*/
+.form-elegant .font-small {
+  font-size: 0.8rem; }
+
+/*Add Patient button*/
+@keyframes buttonAnimation {
+    from {padding: 10px 20px; font-size: inherit;}
+    to{padding: 15px 30px; font-size: 24px;}
+}
+.add-patient-button{
+    background: #fc3;
+    background: linear-gradient(#fc3, #f91);
+    border-radius: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    color: white;
+}
+
+.add-patient-button:hover{
+    border-color: #333;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    background: #f91;
+    background:linear-gradient(to top, #fc3, #f91);
+}
+
+.add-patient-button:active{
+    position: relative;
+    top: 1px;
+}
