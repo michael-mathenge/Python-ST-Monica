@@ -1,0 +1,29 @@
+{% extends 'patients/base.html' %}
+{% block title %} Medication List {% endblock %}
+{% block body %}
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <table class="table table-condensed table-striped table-hover active">
+                        <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Name</th>
+                              <th>remaining</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for meds in object_list %}
+                                <tr id="patient-link">
+                                  <th scope="row">{{ patient.id }}</th>
+                                    <td>{{ meds.name }}</td>
+                                    <td>{{ meds.stock_balance }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table><!-- End table -->
+                </div><!--end col-lg-6 -->
+            </div><!--End row -->
+    </div><!-- End container -->
+
+{% endblock %}

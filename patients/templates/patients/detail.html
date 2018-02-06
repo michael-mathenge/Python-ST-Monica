@@ -1,0 +1,36 @@
+{% extends 'patients/base.html' %}
+{% block title %}Patient details{% endblock %}
+{% block body %}
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-condensed table-striped table-hover active">
+                        <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th>Telephone Number </th>
+                                <th>Medication History </th>
+                                <th>Past Medication History </th>
+                                <th>Doctor Assigned </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr id="patient-link">
+                                  <th scope="row">{{ patient.id }}</th>
+                                    <td>{{ patient.name }}</td>
+                                    <td>{{ patient.age }}</td>
+                                    <td>{{ patient.telephone }}</td>
+                                    <td>{{ patient.medication_history }}</td>
+                                    <td>{{ patient.past_medical_history }}</td>
+                                    <td>{{ patient.doctor_assigned }}</td>
+                                </tr>
+                        </tbody>
+                    </table><!-- End table -->
+                    <
+                </div><!--end col-lg-6 -->
+            </div><!--End row -->
+    </div><!-- End Container -->
+
+{% endblock %}

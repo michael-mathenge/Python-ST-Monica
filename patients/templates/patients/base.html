@@ -44,10 +44,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'medications:medications_index' %}">Medications</a>
+                <a class="nav-link" href="{% url 'medications:index' %}">Medications</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'doctors:doctors_index' %}">
+                <a class="nav-link" href="{% url 'doctors:index' %}">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Doctors
                 </a>
               </li>
@@ -58,7 +58,19 @@
             </form>
               <ul class="navbar-nav navbar-right">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">+ Add Patients</a>
+                    <a class="nav-link" href="{% url 'patients:patient-add' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; + Add Patients
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'medications:medication-add' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; + Add medication
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'doctors:doctor-add' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; + Add doctor
+                    </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">- Logout</a>
